@@ -4,6 +4,13 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+/**
+ * main - Entry point
+ * Description: Print whether the number stored in 'n' is positive or negative.
+ * Return: 0 if successful
+ *
+ */
+
 int main(void)
 {
 	int n;
