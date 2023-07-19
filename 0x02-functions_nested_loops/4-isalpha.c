@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * int _isalpha - Entry point
+ * _isalpha - Entry point
  *
  * @c: Charcter to be procesed
  * Description: checks for alphabetic character.
