@@ -4,6 +4,7 @@
  * _islower - Entry point
  *
  * Description: checks for lowercase character.
+ * @c: Charcter to be checked.
  *
  * Return: 1 if lowercase; 0 if otherwise
  */
