@@ -17,13 +17,12 @@ void rev_string(char *s)
 
 	while (*s++)
 		counter++;
-	counter--;
 	s = start;	/* Reset 's' pointer to the original starting address */
 
 	for (i = 0; i < counter / 2; i++)
 	{
 		temp = *(s + i);
-		*(s + i) = *(s + counter - i);
-		*(s + counter - i) = temp;
+		*(s + i) = *(s + counter - 1 - i);
+		*(s + counter - 1 - i) = temp;
 	}
 }
