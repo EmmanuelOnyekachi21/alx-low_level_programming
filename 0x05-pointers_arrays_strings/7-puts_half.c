@@ -20,7 +20,7 @@ void puts_half(char *str)
 	str = start;
 
 	if (counter % 2 != 0)
-		n = (counter - 1) / 2;
+		n = (counter + 1) / 2;
 	else
 		n = counter / 2;
 
