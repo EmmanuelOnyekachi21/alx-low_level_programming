@@ -4,6 +4,7 @@
  * *_strncat - Entry point
  *
  * @dest: Destination
+ * @n: Most byte to be copied from src
  * @src: Source
  * Description: concatenates two strings, it will use at most n bytes from src.
  *
