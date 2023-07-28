@@ -13,20 +13,19 @@
 char *leet(char *s)
 {
 	char *ptr = s;
+	char s1[] = "aAeEoOtTlL";
+	char s2[] = "4433003311";
+	int j;
 
 	while (*s)
 	{
-		if (*s == 'a' || *s == 'A')
-			*s = '4';
-		else if (*s == 'e' || *s == 'E')
-			*s = '3';
-		else if (*s == 'o' || *s == 'O')
-			*s = '0';
-		else if (*s == 't' || *s == 'T')
-			*s = '3';
-		else if (*s == 'l' || *s == 'L')
-			*s = '1';
+		for (j = 0; j < 10; j++)
+		{
+			if (*s == *(s1 + j))
+				*s = *(s2 + j);
+		}
 		s++;
 	}
+
 	return (ptr);
 }
