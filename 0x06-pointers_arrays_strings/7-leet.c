@@ -1,30 +1,24 @@
-#include <stdio.h>
-#include "main.h"
-/**
- * *leet - Entry point
- *
- * @s: String to be modified.
- *
- * Description: encodes a string into 1337.
- *
- * Return: Return pointer to modified string.
- */
+#include "holberton.h"
 
+/**
+ * leet - a function that encodes a string into 1337.
+ * @s: an input string to encode
+ * Return: An encode string
+ */
 char *leet(char *s)
 {
-	char *ptr = s;
-	const char s1[] = "aAeEoOtTlL";
-	const char s2[] = "4433003311";
-	int i, j;
+	int i = 0, j;
+	char subs[10] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'},
+	     str[10] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i])
 	{
 		for (j = 0; j < 10; j++)
-		{
-			if (s[i] == s1[j])
-				s[i] = s2[j];
-		}
+			if (s[i] == str[j])
+				s[i] = subs[j];
+
+		i++;
 	}
 
-	return (ptr);
+	return (s);
 }
