@@ -18,18 +18,19 @@ char *str_concat(char *s1, char *s2)
 	int i, length_1, length_2, TotalLength;
 
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
 	length_1 = 0;
 	while (s1[length_1])
 		length_1++;
 
-	if (s2 == NULL)
-		s2 = "";
-	else
-	{
-		length_2 = 0;
-		while (s2[length_2])
-			length_2++;
-	}
+
+	length_2 = 0;
+	while (s2[length_2])
+		length_2++;
 
 	TotalLength = (length_1 + length_2);
 	ptr = (char *)malloc(sizeof(char) * (TotalLength + 1));
