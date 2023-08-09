@@ -3,6 +3,8 @@
 /**
  * main - Entry point
  *
+ * @argc: Counts argumnets
+ * @argv: Array of string
  * Description: prints name of program followed by a new line
  *
  * Return: Return 0 if successful
