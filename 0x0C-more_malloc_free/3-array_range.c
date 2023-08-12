@@ -4,8 +4,8 @@
 /**
  * array_range - Entry point
  *
- * @min: Value of array
- * @max: Value of array
+ * @min: Minimum Value of array
+ * @max: Maximum Value of array
  * Description: creates an array of integers.
  *
  * Return: Return pointer
@@ -13,24 +13,21 @@
 
 int *array_range(int min, int max)
 {
-        int index, i = 0;
-        int *ptr;
-        int counter = 0;
+	int i;
+	int *ptr;
+	int counter = 0;
 
-        if (min > max)
-                return (NULL);
+	if (min > max)
+		return (NULL);
 
-        counter = max - min;
-        counter += 1;
+	counter = max - min;
+	counter += 1;
 
-        ptr = malloc(counter * sizeof(int));
-        if (ptr == NULL)
-                return (NULL);
+	ptr = malloc(counter * (sizeof(int)));
+	if (ptr == NULL)
+		return (NULL);
 
-        for (index = min; index <= max; index++)
-        {
-                ptr[i] = index;
-                i++;
-        }
-        return (ptr);
+	for (i = 0; i < counter; i++)
+		ptr[i] = min + i;
+	return (ptr);
 }
