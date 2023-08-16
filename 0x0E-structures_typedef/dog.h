@@ -7,7 +7,12 @@
  * @age: Dog's age
  * @owner: The Dog's owner
  */
-typedef struct dog dog_t
+
+/**
+ * dog_t - Typedef for dog structure
+ */
+typedef struct dog dog_t;
+
 struct dog
 {
 	char *name;
