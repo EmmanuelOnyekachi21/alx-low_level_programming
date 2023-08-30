@@ -10,8 +10,8 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *aout;
-	int c, i, j, ia;
+	char *pointer;
+	int c, i, j, k;
 
 	if (ac == 0)
 		return (NULL);
@@ -26,27 +26,27 @@ char *argstostr(int ac, char **av)
 		c++;
 	}
 
-	aout = malloc((c + 1) * sizeof(char));
+	pointer = malloc((c + 1) * sizeof(char));
 
-	if (aout == NULL)
+	if (pointer == NULL)
 	{
-		free(aout);
+		free(pointer);
 		return (NULL);
 	}
 
-	for (i = j = ia = 0; ia < c; j++, ia++)
+	for (i = j = k = 0; k < c; j++, k++)
 	{
 		if (av[i][j] == '\0')
 		{
-			aout[ia] = '\n';
+			pointer[k] = '\n';
 			i++;
-			ia++;
+			k++;
 			j = 0;
 		}
-		if (ia < c - 1)
-			aout[ia] = av[i][j];
+		if (k < c - 1)
+			pointer[k] = av[i][j];
 	}
-	aout[ia] = '\0';
+	pointer[k] = '\0';
 
-	return (aout);
+	return (pointer);
 }
