@@ -2,7 +2,7 @@
 int check_sqrt(int n, int guess);
 
 /**
- * check_sqrt_recursion - It returns the value of square guess of n.
+ * _sqrt_recursion - It returns the value of square guess of n.
  * @n: an input integer
  * Return: The square guess of n
  */
