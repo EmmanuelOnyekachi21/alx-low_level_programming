@@ -11,3 +11,4 @@ int check_divisor(int num, int div);
 int is_palindrome(char *s);
 int str_length(char *s);
 int check_palindrome(char *s, int start, int end);
+int wildcmp(char *s1, char *s2);
