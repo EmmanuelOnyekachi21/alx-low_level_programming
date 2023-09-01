@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-unsigned int powerOfTwo(unsigned int exponent);
 unsigned int length(const char *b);
 /**
  * binary_to_uint - Entry point
@@ -27,23 +26,11 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
 		temp = b[i] - '0';
-		sum += temp * powerOfTwo(len - 1 - i);
+		sum += temp << (len - 1 - i);
 	}
 	return (sum);
 }
 
-/**
- * pow - function to calculate power
- * @exponent: Represents the power
- * Return: 1 if exponent == 0 or value
- */
-unsigned int powerOfTwo(unsigned int exponent)
-{
-	if (exponent == 0)
-		return (1);
-	else
-		return (2 * powerOfTwo(exponent - 1));
-}
 /**
  * length - Entry point.
  * @b: String containing 0s and 1s
