@@ -24,7 +24,7 @@ int create_file(const char *filename, char *text_content)
 	while (text_content[length])
 		length++;
 
-	fd = open(filename, O_CREAT | O_WRONLY, 0600);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 	RETURN = write(fd, text_content, length);
