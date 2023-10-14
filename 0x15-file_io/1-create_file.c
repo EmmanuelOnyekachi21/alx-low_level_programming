@@ -12,8 +12,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, length = 0, i, bytes_write;
-	char *ptr;
+	int fd, length = 0, bytes_write;
 
 	if (filename == NULL)
 		return (-1);
@@ -24,30 +23,17 @@ int create_file(const char *filename, char *text_content)
 	while (text_content[length++])
 		;
 
-	ptr = malloc((sizeof(char) * length) + 1);
-
-	if (ptr == NULL)
-		return (-1);
-	for (i = 0; i < length; i++)
-	{
-		ptr[i] = text_content[i];
-	}
 	fd = open(filename, O_WRONLY | O_CREAT, 0600);
 	if (fd == -1)
 	{
-		free(ptr);
 		return (-1);
 	}
-	bytes_write = write(fd, ptr, length);
+	bytes_write = write(fd, text_content, length);
 	if (bytes_write == -1)
 	{
-		free(ptr);
 		close(fd);
 		return (-1);
 	}
-
-	free(ptr);
 	close(fd);
-
 	return (1);
 }
