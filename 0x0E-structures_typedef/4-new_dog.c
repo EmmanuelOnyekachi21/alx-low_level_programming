@@ -20,7 +20,7 @@ int my_strlen(const char *str)
 }
 
 /**
- * my_strcpy: Entry point.
+ * my_strcpy - Entry point.
  *
  * @dest: Destination
  * @src: Source of text to be copied.
@@ -48,15 +48,16 @@ void my_strcpy(char *dest, const char *src)
  * @owner: Owner of the new dog.
  *
  * Description: Allocates memory for a new dog structure, copies
- * 		and initializes the age.
+ * and initializes the age.
  *
  * Return: Returns a pointer to the newly created dog.  Returns NULL
- * 		if memory allocation fails.
+ * if memory allocation fails.
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *newDog = malloc(sizeof(dog_t));
+
 	if (newDog == NULL)
 		return (NULL);
 
