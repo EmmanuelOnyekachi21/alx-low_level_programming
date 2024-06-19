@@ -16,13 +16,16 @@ list_t *add_node_end(list_t **head, const char *str)
 	unsigned int counter = 0;
 	list_t *temp = *head;
 
-	newptr = malloc(sizeof(list_t));
-	if (newptr == NULL)
-		return (NULL);
-
 	new_str = strdup(str);
 	if (new_str == NULL)
 		return (NULL);
+
+	newptr = malloc(sizeof(list_t));
+	if (newptr == NULL)
+	{
+		free(new_str);
+		return (NULL);
+	}
 
 	counter = strlen(str);
 
